@@ -7,6 +7,14 @@ class Timer extends Component {
   };
 
   // add your code here
+  //? Why can I pass 1000 as an argument when clockTick has no provision for arguments?
+  componentDidMount(){
+    this.interval = setInterval(this.clockTick,1000)
+  }
+
+  componentWillUnmount(){
+    clearInterval(this.interval)
+  }
 
   render() {
     const { time, color } = this.state;
